@@ -227,6 +227,7 @@ const MusicPlayerSlider = () => {
               className="volume__slider"
               ref={volumeSliderRef}
               onChange={changeVolumeHandler}
+              onClick={changeVolumeHandler}
               type="range"
               defaultValue={100}
             />
