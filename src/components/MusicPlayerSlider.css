@@ -1,3 +1,6 @@
+.music-player__main_wraper {
+  max-height: 100vh;
+}
 .slider__div {
   box-sizing: content-box;
   padding: 3rem 3rem;
