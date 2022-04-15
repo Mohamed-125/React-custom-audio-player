@@ -1,5 +1,5 @@
 .music-player__main_wraper {
-  max-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -306,6 +306,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 @media (max-width: 360px) {
   .slider__div {
     width: 280px;
+    padding: 3rem 0.3rem;
   }
   .player__setting_wraper {
     width: 280px;
@@ -316,8 +317,5 @@ input[type="range"]::-webkit-slider-runnable-track {
   }
   .times__div {
     width: 265px;
-  }
-  .slider__div {
-    padding: 2rem 0.3rem;
   }
 }
