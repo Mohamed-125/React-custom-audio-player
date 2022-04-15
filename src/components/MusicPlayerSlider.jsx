@@ -93,16 +93,6 @@ const MusicPlayerSlider = () => {
   };
 
   // to rotate the image when the song is playing
-  const rotateImgFunc = (e) => {
-    console.log("fsfsd");
-    if (isPlaying) {
-      e.target.style.setProperty(
-        "animation",
-        `rotation ${30}s infinite linear`
-      );
-    } else {
-    }
-  };
 
   // useEffect to go to the next or the perv song
 
@@ -164,7 +154,7 @@ const MusicPlayerSlider = () => {
           library={library}
         />
 
-        <img src={audioData[counter].img} onLoad={rotateImgFunc} />
+        <img src={audioData[counter].img} />
         <h3 style={{ textAlign: "center", marginBottom: "0.5rem" }}>
           {audioData[counter].name}
         </h3>
@@ -212,26 +202,32 @@ const MusicPlayerSlider = () => {
             )}
             <MdOutlineKeyboardArrowRight onClick={nextOrPrevSong} id="next" />
           </div>
-          <AiFillSound
-            style={{ position: "relative", top: " 0.09rem" }}
-            onClick={volumeHandler}
-          />
+          {window.innerWidth <= 768 ? (
+            <></>
+          ) : (
+            <>
+              <AiFillSound
+                style={{ position: "relative", top: " 0.09rem" }}
+                onClick={volumeHandler}
+              />
 
-          <div
-            style={{
-              width: "80px",
-              display: isvolumeControls ? "block" : "none",
-            }}
-          >
-            <input
-              className="volume__slider"
-              ref={volumeSliderRef}
-              onChange={changeVolumeHandler}
-              onClick={changeVolumeHandler}
-              type="range"
-              defaultValue={100}
-            />
-          </div>
+              <div
+                style={{
+                  width: "80px",
+                  display: isvolumeControls ? "block" : "none",
+                }}
+              >
+                <input
+                  className="volume__slider"
+                  ref={volumeSliderRef}
+                  onChange={changeVolumeHandler}
+                  onClick={changeVolumeHandler}
+                  type="range"
+                  defaultValue={100}
+                />
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
