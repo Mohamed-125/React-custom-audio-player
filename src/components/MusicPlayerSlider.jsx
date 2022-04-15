@@ -178,6 +178,8 @@ const MusicPlayerSlider = () => {
           ref={audioRef}
         ></audio>
         <input
+          onTouchMove={changePostionHandler}
+          onTouchStart={changePostionHandler}
           onChange={changePostionHandler}
           ref={sliderRef}
           className="player__slider"
@@ -228,6 +230,8 @@ const MusicPlayerSlider = () => {
               ref={volumeSliderRef}
               onChange={changeVolumeHandler}
               onClick={changeVolumeHandler}
+              onTouchMove={changeVolumeHandler}
+              onTouchStart={changeVolumeHandler}
               type="range"
               defaultValue={100}
             />
