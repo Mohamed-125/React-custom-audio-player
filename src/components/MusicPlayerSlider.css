@@ -61,9 +61,6 @@ button {
   top: -0.2rem;
 }
 
-.music-player__main_wraper {
-  min-height: 100vh;
-}
 .flex__center {
   display: flex;
   justify-content: center;
