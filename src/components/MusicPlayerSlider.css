@@ -1,0 +1,320 @@
+.slider__div {
+  box-sizing: content-box;
+  padding: 3rem 3rem;
+  box-shadow: 0px 0px 20px black;
+  border-radius: 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.player__setting_wraper {
+  font-size: 22px;
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: 1rem;
+}
+
+.player__pausePlayPrev {
+  font-size: 27px;
+  width: 150px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 0rem;
+}
+path {
+  pointer-events: none;
+}
+button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  position: relative;
+  top: 0.2rem;
+}
+.slider__div img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.times__div {
+  width: 300px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  position: relative;
+  font-size: 13px;
+  color: #6e6e6e;
+  top: -0.2rem;
+}
+
+.music-player__main_wraper {
+  min-height: 100vh;
+}
+.flex__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+some of this sytling are from website which make player sliders for free 
+so i took it and edit it 
+bec. its hard to style range element from scratch and keep it working for other browsers
+website link : https://www.cssportal.com/style-input-range/
+*/
+
+/* global styles to the input for all browsers */
+input[type="range"] {
+  --volume-slider-width: 100%;
+  --width: 0px;
+  --translate-value: 0%;
+  display: flex;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  position: relative;
+  --thump-color: rgb(255, 80, 80);
+  --background-color: linear-gradient(
+    to right,
+    rgb(252, 64, 64),
+    rgb(254, 132, 132)
+  );
+}
+.player__slider::before {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 0;
+  width: var(--width);
+  background-image: var(--background-color);
+  height: 7px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.volume__slider::before {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+
+  width: var(--volume-slider-width);
+  background-image: var(--background-color);
+  height: 7px;
+  border-radius: 5px;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #e0e0e0;
+  border-radius: 10px;
+  border: 0px solid #000000;
+}
+.player__slider::-webkit-slider-thumb,
+.volume__slider::-webkit-slider-thumb {
+  appearance: none;
+}
+.player__slider:hover::-webkit-slider-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 25px;
+  background: var(--thump-color);
+  cursor: pointer;
+  -webkit-appearance: none;
+  position: absolute;
+  top: -3px;
+  left: calc(var(--translate-value) - 5px);
+  z-index: 10;
+}
+.volume__slider:hover::-webkit-slider-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 25px;
+  background: var(--thump-color);
+  cursor: pointer;
+  -webkit-appearance: none;
+  position: relative;
+  top: -2px;
+  z-index: 10;
+  left: 0px;
+}
+.player__slider:focus::-webkit-slider-runnable-track {
+  background: #f2eded;
+}
+
+/* firefox */
+.player__slider::-moz-range-track {
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #f2eded;
+  border-radius: 20px;
+  border: 0px solid #000000;
+}
+.player__slider::-moz-range-thumb,
+.volume__slider::-webkit-slider-thumb {
+  appearance: none;
+  transition: 0.1s all;
+}
+.player__slider:hover::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 25px;
+  background: var(--thump-color);
+  cursor: pointer;
+  -webkit-appearance: none;
+  position: absolute;
+  top: -3px;
+  left: calc(var(--translate-value) - 5px);
+  z-index: 10;
+}
+.volume__slider:hover::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 25px;
+  background: var(--thump-color);
+  cursor: pointer;
+  -webkit-appearance: none;
+  position: relative;
+  top: -2px;
+  z-index: 10;
+}
+
+/* Internet Explorer */
+.player__slider::-ms-track {
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.player__slider::-ms-fill-lower {
+  background: #f2eded;
+  border: 0px solid #000000;
+  border-radius: 40px;
+  box-shadow: 0px 0px 0px #000000;
+}
+.player__slider::-ms-fill-upper {
+  background: #f2eded;
+  border: 0px solid #000000;
+  border-radius: 40px;
+  box-shadow: 0px 0px 0px #000000;
+}
+.player__slider::-ms-thumb,
+.volume__slider::-webkit-slider-thumb {
+  appearance: none;
+}
+.player__slider:hover::-ms-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 25px;
+  background: var(--thump-color);
+  cursor: pointer;
+  -webkit-appearance: none;
+  position: absolute;
+  top: -3px;
+  left: calc(var(--translate-value) - 5px);
+  z-index: 10;
+}
+.volume__slider:hover::-ms-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 25px;
+  background: var(--thump-color);
+  cursor: pointer;
+  -webkit-appearance: none;
+  position: relative;
+  top: -2px;
+  z-index: 10;
+}
+.player__slider:focus::-ms-fill-lower {
+  background: #f2eded;
+}
+.player__slider:focus::-ms-fill-upper {
+  background: #f2eded;
+}
+
+/* volume slider styles */
+.volume__slider {
+  width: 20px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@media (max-width: 1250px) {
+  .slider__div {
+    box-sizing: content-box;
+    padding: 3rem 3rem;
+    box-shadow: 0px 0px 20px black;
+    border-radius: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+}
+
+@media (max-width: 900px) {
+  .slider__div {
+    box-sizing: content-box;
+    padding: 2.4rem 1rem;
+    /* padding-bottom: 6rem; */
+    box-shadow: 0px 0px 20px black;
+    border-radius: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+}
+
+@media (max-width: 360px) {
+  .slider__div {
+    width: 280px;
+  }
+  .player__setting_wraper {
+    width: 280px;
+  }
+  .slider__div img {
+    width: 200px;
+    height: 200px;
+  }
+  .times__div {
+    width: 265px;
+  }
+  .slider__div {
+    padding: 2rem 0.3rem;
+  }
+}
